@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18166024071bd44fb9f4772281a36d34
+guid: a5a7a69bef39849858a5a0dabbd75174
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,9 +39,9 @@ ScriptedImporter:
   spriteData:
     TessellationDetail: 0
     SpriteRect:
-      name: 
+      name: T_UI_arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24Sprite
       originalName: 
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.49999994, y: 0.5}
       alignment: 0
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -49,7 +49,7 @@ ScriptedImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 0
-        height: 0
-      spriteID: 11690725fa6e5473bad8f5355c951f05
+        width: 640
+        height: 640
+      spriteID: c9a3a895d0b504c80973758b92f8c3a9
     PhysicsOutlines: []
