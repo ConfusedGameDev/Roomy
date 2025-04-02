@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Find Apartments_0: -6300484427756682495
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
