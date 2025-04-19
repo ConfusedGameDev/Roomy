@@ -3,7 +3,17 @@ guid: ee00fd9fbd88d429e9cdfd12787c9a7e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_BlackLeather
+    second: {fileID: 2100000, guid: 745212850fcfa45e8be45a374e8cdb30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_PALITO_WOOD
+    second: {fileID: 2100000, guid: 4cc637fc36e844ce4bc130ed83286b39, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

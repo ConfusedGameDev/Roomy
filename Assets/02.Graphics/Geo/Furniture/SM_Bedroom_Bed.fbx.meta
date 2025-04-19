@@ -3,7 +3,22 @@ guid: 7f405061f97a74964a530d1bbad7d0f5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bed_Chocofur_Wood_Solid_03
+    second: {fileID: 2100000, guid: 771feb98e387345a5b6b2fdcfafb8d3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: c9059455591f946be987ffa0d5f58a9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stofa_saltea
+    second: {fileID: 2100000, guid: b11ddff8dd3954e2a9723835db7a68e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

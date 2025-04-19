@@ -506,6 +506,7 @@ MonoBehaviour:
   - {fileID: -8186968272690591729}
   - {fileID: -3978695733392391637}
   - {fileID: -1083910812058648046}
+  - {fileID: 2082424673495981278}
 --- !u!114 &156332030701414761
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -568,6 +569,61 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 1
     m_Value: 1000
+--- !u!114 &2082424673495981278
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e08f114f8d774487f763df7d78e36, type: 3}
+  m_Name: DeNorSobOutlineVolumeComponent
+  m_EditorClassIdentifier: 
+  active: 1
+  OutlineWidth:
+    m_OverrideState: 1
+    m_Value: 0
+  DepthThreshold:
+    m_OverrideState: 1
+    m_Value: 900
+  NormalThreshold:
+    m_OverrideState: 1
+    m_Value: 1.3
+  NormalMin:
+    m_OverrideState: 1
+    m_Value: 1
+  NormalMax:
+    m_OverrideState: 1
+    m_Value: 1
+  SobelOutline:
+    m_OverrideState: 1
+    m_Value: 0
+  SobelOutlineThreshold:
+    m_OverrideState: 1
+    m_Value: 300
+  WhiteThreshold:
+    m_OverrideState: 1
+    m_Value: 0
+  BlackThreshold:
+    m_OverrideState: 1
+    m_Value: 0
+  OutlineColor:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  ColorIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  MixFullScreenColor:
+    m_OverrideState: 1
+    m_Value: 0
+  ShowOutlineOnly:
+    m_OverrideState: 1
+    m_Value: 0
+  MixDephNormalAndSobelOutline:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &2332282131777942337
 MonoBehaviour:
   m_ObjectHideFlags: 3

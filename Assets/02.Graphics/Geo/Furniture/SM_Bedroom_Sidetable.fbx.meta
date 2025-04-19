@@ -3,7 +3,17 @@ guid: 75a026688bb4e4ef091fb9724efbb0fa
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chocofur_Wood_Solid_03
+    second: {fileID: 2100000, guid: 771feb98e387345a5b6b2fdcfafb8d3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome.001
+    second: {fileID: 2100000, guid: c9059455591f946be987ffa0d5f58a9e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
