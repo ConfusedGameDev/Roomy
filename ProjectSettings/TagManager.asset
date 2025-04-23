@@ -3,7 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Area_Bedroom
+  - Area_Dining
+  - Area_Living
+  - Area_Office
+  - Area_Kitchen
+  - Area_FacilityBathroom
+  - Furniture_Bed
+  - Furniture_BedsideTable
+  - Furniture_DiningTable
+  - Furniture_LowTable
+  - Furniture_Shelf
+  - Furniture_Armchair
+  - Furniture_Sofa
+  - Furniture_Storage
+  - Furniture_TVSet
+  - Furniture_OfficeChair
+  - Furniture_Desk
+  - Furniture_Closet
+  - Furniture_WhitewareHigh
+  - Furniture_WhitewareLow
   layers:
   - Default
   - TransparentFX

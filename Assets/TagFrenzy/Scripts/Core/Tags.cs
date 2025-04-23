@@ -1,0 +1,32 @@
+namespace TagFrenzy
+{
+public enum Tags
+{
+AreaBed,
+AreaDining,
+AreaFacilityBathroom,
+AreaKitchen,
+AreaLiving,
+AreaOffice,
+Background,
+Enemy,
+Foreground,
+Friend,
+FurnitureArmchair,
+FurnitureBed,
+FurnitureBedsideTable,
+FurnitureChair,
+FurnitureCloset,
+FurnitureDesk,
+FurnitureDiningTable,
+FurnitureLowTable,
+FurnitureOfficeChair,
+FurnitureShelf,
+FurnitureSofa,
+FurnitureStorage,
+FurnitureTVSet,
+FurnitureWhitewareHigh,
+FurnitureWhitewareLow,
+MainCamera
+}
+}

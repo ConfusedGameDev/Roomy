@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b0173213478468947bf45653e7d00df4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 13170
+  packageName: Tag Frenzy
+  packageVersion: 1.1
+  assetPath: Assets/TagFrenzy/Scripts/Core/TagFrenzyList.cs
+  uploadId: 31519
