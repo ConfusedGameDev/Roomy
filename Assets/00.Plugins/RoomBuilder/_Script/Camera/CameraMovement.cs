@@ -1,107 +1,125 @@
-using Unity.Cinemachine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
-/// <summary>
-/// Script that moves and rotates a Cinemachine camera target to control the movement and rotation of the camera.
-/// It also allows to zoom in and out using the scroolwheel
-/// </summary>
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField, Min(0.1f)]
-    private float speed = 1f;
-    [SerializeField]
-    private float rotationSpeed = 15;
-    //This parameter is used for lerping
-    [SerializeField]
-    private float movementTime = 0.1f;
-    [SerializeField]
-    private Vector3 zoomAmount, zoomLimitClose, zoomLimitFar;
+    [Header("Movement")]
+    [SerializeField, Min(0.1f)] private float speed = 1f;
+    [SerializeField] private float movementTime = 0.1f;
 
-    [SerializeField]
-    CinemachineVirtualCamera cameraReference;
-    //We need the Transposer to implement Zoom operation
-    CinemachineTransposer cameraTransposer;
+    [Header("Rotation")]
+    [SerializeField] private float rotationSpeed = 15f;            // For Q/E or Mouse X
+    [SerializeField] private float rotationSpeedTouch = 0.5f;       // Tweak for two-finger twist
+
+    [Header("Zoom")]
+    [SerializeField] private Vector3 zoomAmount = new Vector3(0, 0, 1f);
+    [SerializeField] private Vector3 zoomLimitClose = new Vector3(0, 5, -5);
+    [SerializeField] private Vector3 zoomLimitFar = new Vector3(0, 20, -20);
+
+    [Header("Bounds")]
+    [SerializeField] private int constraintXMax = 5, constraintXMin = -5;
+    [SerializeField] private int constraintZMax = 5, constraintZMin = -5;
+
+    [SerializeField] private CinemachineVirtualCamera cameraReference;
+    private CinemachineTransposer cameraTransposer;
+
     private Vector3 newZoom;
-
     private Quaternion targetRotation;
-
-    Vector2 input;
-
-    [SerializeField]
-    private int constraintXMax = 5, constraintXMin = -5, constraintZMax = 5, constraintZMin = -5;
+    private Vector2 input;
 
     private void Start()
     {
-        //We need to use this Cinemachine specific method to access Transposer
         cameraTransposer = cameraReference.GetCinemachineComponent<CinemachineTransposer>();
         targetRotation = transform.rotation;
         newZoom = cameraTransposer.m_FollowOffset;
-        
     }
-    
-    /// <summary>
-    /// This code could be refactored to the Input class so that we can easily change the assigned buttons.
-    /// Right now WSAD/Arrows controls the movement. Q and E allows to rotate the camera.
-    /// Scroll wheel allows to zoom in and out
-    /// </summary>
+
     void Update()
     {
-        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        int rotationDirection = 0;
-        if(Input.GetKey(KeyCode.Q)) 
-            rotationDirection = -1;
-        if (Input.GetKey(KeyCode.E))
-            rotationDirection = 1;
-        targetRotation = transform.rotation* Quaternion.Euler(Vector3.up * rotationDirection * rotationSpeed);
+        HandleInput();
+        ApplyMovement();
+        ApplyRotation();
+        ApplyZoom();
+    }
 
-        if(Mathf.Approximately(Input.mouseScrollDelta.y,0) == false)
+    private void HandleInput()
+    {
+        // Movement input
+        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        // ----- PC: Right-mouse drag Y-rotation -----
+        if (Input.GetMouseButton(1))
         {
-            //Checks which way we are scroling to decide if we want to zoom in or out
-            int zoomDirection = Input.mouseScrollDelta.y > 0 ? 1 : -1;
-            newZoom += zoomAmount * zoomDirection;
-            newZoom = ClampVector(newZoom, zoomLimitClose, zoomLimitFar);
+            float mouseDeltaX = Input.GetAxis("Mouse X");
+            targetRotation *= Quaternion.Euler(0f, mouseDeltaX * rotationSpeed * Time.deltaTime, 0f);
         }
 
-        transform.position += (transform.forward * input.y + transform.right * input.x) * speed * Time.deltaTime;
+        // ----- Mobile: Two-finger twist Y-rotation -----
+        if (Input.touchCount == 2)
+        {
+            Touch t0 = Input.GetTouch(0);
+            Touch t1 = Input.GetTouch(1);
 
+            Vector2 prevDir = (t1.position - t1.deltaPosition) - (t0.position - t0.deltaPosition);
+            Vector2 currDir = t1.position - t0.position;
+
+            float anglePrev = Mathf.Atan2(prevDir.y, prevDir.x) * Mathf.Rad2Deg;
+            float angleCurr = Mathf.Atan2(currDir.y, currDir.x) * Mathf.Rad2Deg;
+            float deltaAngle = Mathf.DeltaAngle(anglePrev, angleCurr);
+
+            targetRotation *= Quaternion.Euler(0f, deltaAngle * rotationSpeedTouch, 0f);
+        }
+
+        // (Optional) Q/E keys fallback
+        int rotDir = 0;
+        if (Input.GetKey(KeyCode.Q)) rotDir = -1;
+        if (Input.GetKey(KeyCode.E)) rotDir = 1;
+        if (rotDir != 0)
+            targetRotation *= Quaternion.Euler(0f, rotDir * rotationSpeed * Time.deltaTime, 0f);
+
+        // Zoom wheel
+        if (!Mathf.Approximately(Input.mouseScrollDelta.y, 0f))
+        {
+            int zoomDir = Input.mouseScrollDelta.y > 0f ? 1 : -1;
+            newZoom += zoomAmount * zoomDir;
+            newZoom = ClampVector(newZoom, zoomLimitClose, zoomLimitFar);
+        }
+    }
+
+    private void ApplyMovement()
+    {
+        Vector3 move = (transform.forward * input.y + transform.right * input.x) * speed * Time.deltaTime;
+        transform.position += move;
+
+        // Clamp within XZ bounds
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, constraintXMin, constraintXMax),
             transform.position.y,
-            Mathf.Clamp(transform.position.z, constraintZMin, constraintZMax));
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime / movementTime);
-        cameraTransposer.m_FollowOffset = Vector3.Lerp(cameraTransposer.m_FollowOffset, newZoom, Time.deltaTime / movementTime);
-
+            Mathf.Clamp(transform.position.z, constraintZMin, constraintZMax)
+        );
     }
 
-    /// <summary>
-    /// This allows us to clamp zoom of the camera to the limit values
-    /// </summary>
-    /// <param name="newZoom"></param>
-    /// <param name="zoomLimitClose"></param>
-    /// <param name="zoomLimitFar"></param>
-    /// <returns></returns>
-    private Vector3 ClampVector(Vector3 newZoom, Vector3 zoomLimitClose, Vector3 zoomLimitFar)
+    private void ApplyRotation()
     {
-        newZoom.x = Mathf.Clamp(newZoom.x, zoomLimitClose.x, zoomLimitFar.x);
-        newZoom.y = Mathf.Clamp(newZoom.y,zoomLimitClose.y,zoomLimitFar.y);
-        newZoom.z = Mathf.Clamp(newZoom.z, zoomLimitClose.z, zoomLimitFar.z);
-        return newZoom;
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime / movementTime);
     }
 
-    //private void FixedUpdate()
-    //{
-    //    transform.position += (transform.forward * input.y + transform.right * input.x) * speed*Time.fixedDeltaTime;
+    private void ApplyZoom()
+    {
+        cameraTransposer.m_FollowOffset = Vector3.Lerp(
+            cameraTransposer.m_FollowOffset,
+            newZoom,
+            Time.deltaTime / movementTime
+        );
+    }
 
-    //    transform.position = new Vector3(
-    //        Mathf.Clamp(transform.position.x, constraintXMin, constraintXMax), 
-    //        transform.position.y, 
-    //        Mathf.Clamp(transform.position.z, constraintZMin, constraintZMax));
-
-    //    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime / movementTime);
-    //    cameraTransposer.m_FollowOffset = Vector3.Lerp(cameraTransposer.m_FollowOffset, newZoom, Time.deltaTime / movementTime);
-    //}
+    private Vector3 ClampVector(Vector3 value, Vector3 min, Vector3 max)
+    {
+        return new Vector3(
+            Mathf.Clamp(value.x, min.x, max.x),
+            Mathf.Clamp(value.y, min.y, max.y),
+            Mathf.Clamp(value.z, min.z, max.z)
+        );
+    }
 }
