@@ -1,7 +1,7 @@
 // Author: Daniele Giardini - http://www.demigiant.com
 // Created: 2018/07/13
 
-#if false && (UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_5 || UNITY_2017_1_OR_NEWER) // MODULE_MARKER
+#if true && (UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_5 || UNITY_2017_1_OR_NEWER) // MODULE_MARKER
 using System;
 using UnityEngine;
 using DG.Tweening.Core;
@@ -19,12 +19,7 @@ namespace DG.Tweening
         /// <summary>Tweens a SpriteRenderer's color to the given value.
         /// Also stores the spriteRenderer as the tween's target so it can be used for filtered operations</summary>
         /// <param name="endValue">The end value to reach</param><param name="duration">The duration of the tween</param>
-        public static TweenerCore<Color, Color, ColorOptions> DOColor(this SpriteRenderer target, Color endValue, float duration)
-        {
-            TweenerCore<Color, Color, ColorOptions> t = DOTween.To(() => target.color, x => target.color = x, endValue, duration);
-            t.SetTarget(target);
-            return t;
-        }
+         
 
         /// <summary>Tweens a Material's alpha color to the given value.
         /// Also stores the spriteRenderer as the tween's target so it can be used for filtered operations</summary>
