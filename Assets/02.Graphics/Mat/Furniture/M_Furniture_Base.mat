@@ -226,7 +226,7 @@ Material:
     - _MCIALO: 0
     - _MCapIntensity: 1
     - _MVCOL: 0
-    - _MaiColPo: 0.8
+    - _MaiColPo: 0.85
     - _MaxFadDistance: 2
     - _Metallic: 0
     - _MinFadDistance: 0
@@ -310,11 +310,11 @@ Material:
     - _SelfLitIntensity: 0
     - _SelfLitPower: 2
     - _SelfShadowAffectedByLightShadowStrength: 0
-    - _SelfShadowHardness: 0.148
+    - _SelfShadowHardness: 0.71
     - _SelfShadowRealTimeShadowColorPower: 1
-    - _SelfShadowRealtimeShadowIntensity: 0.261
+    - _SelfShadowRealtimeShadowIntensity: 0.3
     - _SelfShadowShadowTAtViewDirection: 0
-    - _SelfShadowThreshold: 0.966
+    - _SelfShadowThreshold: 0.9
     - _ShadowColorTexturePower: 0
     - _ShadowHardness: 0
     - _ShadowTColorPower: 1
