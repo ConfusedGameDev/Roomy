@@ -42,18 +42,22 @@ public class CameraMovement : MonoBehaviour
         ApplyRotation();
         ApplyZoom();
     }
-
+    public void updateVerticalRotation(float delta)
+    {
+      
+        targetRotation *= Quaternion.Euler(0f, delta * rotationSpeed , 0f);
+    }
     private void HandleInput()
     {
         // Movement input
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         // ----- PC: Right-mouse drag Y-rotation -----
-        if (Input.GetMouseButton(1))
-        {
-            float mouseDeltaX = Input.GetAxis("Mouse X");
-            targetRotation *= Quaternion.Euler(0f, mouseDeltaX * rotationSpeed * Time.deltaTime, 0f);
-        }
+        //if (Input.GetMouseButton(1))
+        //{
+       //     float mouseDeltaX = Input.GetAxis("Mouse X");
+         //   targetRotation *= Quaternion.Euler(0f, mouseDeltaX * rotationSpeed * Time.deltaTime, 0f);
+      //  }
 
         // ----- Mobile: Two-finger twist Y-rotation -----
         if (Input.touchCount == 2)
