@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uvOffsetProperty: _UVOffset
-  offsetMultiplier: 1
+  offsetMultiplier: -1
   cameraOffsetMultiplier: 1
   camController: {fileID: 0}
   camMouseDelta: 0
