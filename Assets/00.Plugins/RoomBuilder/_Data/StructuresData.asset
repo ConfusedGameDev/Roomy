@@ -41,32 +41,32 @@ MonoBehaviour:
     ID: 4
     size: {x: 2, y: 2}
     objectPlacementType: 5
-    prefab: {fileID: 3487007735555770654, guid: 4721f1b576334dc46b3c72470bf613e3, type: 3}
-    previewObject: {fileID: 3487007735555770654, guid: 4721f1b576334dc46b3c72470bf613e3, type: 3}
+    prefab: {fileID: 7213048799458027881, guid: 41acc7e4cbb9e468c9a6c38beb05caa4, type: 3}
+    previewObject: {fileID: 7213048799458027881, guid: 41acc7e4cbb9e468c9a6c38beb05caa4, type: 3}
   - name: BedSmall
     ID: 5
     size: {x: 1, y: 2}
     objectPlacementType: 5
-    prefab: {fileID: 5850475931862319619, guid: 9ff0a40e81c213747b2c254c44aaeadd, type: 3}
-    previewObject: {fileID: 5850475931862319619, guid: 9ff0a40e81c213747b2c254c44aaeadd, type: 3}
+    prefab: {fileID: 6502979505767147083, guid: 100f8527b8de54f1d84d306caa29a5bf, type: 3}
+    previewObject: {fileID: 6502979505767147083, guid: 100f8527b8de54f1d84d306caa29a5bf, type: 3}
   - name: Chair
     ID: 6
     size: {x: 1, y: 1}
     objectPlacementType: 5
-    prefab: {fileID: 4428052050468720457, guid: e033e50487fb016449143cd70d837387, type: 3}
-    previewObject: {fileID: 4428052050468720457, guid: e033e50487fb016449143cd70d837387, type: 3}
+    prefab: {fileID: 1711307788333276086, guid: efbb5a582fbbd4c9aaaff8458c224a9a, type: 3}
+    previewObject: {fileID: 1711307788333276086, guid: efbb5a582fbbd4c9aaaff8458c224a9a, type: 3}
   - name: Table
     ID: 7
     size: {x: 2, y: 1}
     objectPlacementType: 5
-    prefab: {fileID: 3493615974341626966, guid: c8183485a28237d4385a3c7ef8659faa, type: 3}
-    previewObject: {fileID: 3493615974341626966, guid: c8183485a28237d4385a3c7ef8659faa, type: 3}
-  - name: Fridge
+    prefab: {fileID: 4975694012920019413, guid: 3862f69decdbd447a8a03cf52ec66ac7, type: 3}
+    previewObject: {fileID: 4975694012920019413, guid: 3862f69decdbd447a8a03cf52ec66ac7, type: 3}
+  - name: WhitewareHigh
     ID: 8
     size: {x: 1, y: 1}
     objectPlacementType: 4
-    prefab: {fileID: 4344590435354947618, guid: 52be3717e97d1b64c9d5f3ae6558791f, type: 3}
-    previewObject: {fileID: 4344590435354947618, guid: 52be3717e97d1b64c9d5f3ae6558791f, type: 3}
+    prefab: {fileID: 9167734009561608655, guid: 2315ab6ca664c424fbba6c589c8fbfdd, type: 3}
+    previewObject: {fileID: 9167734009561608655, guid: 2315ab6ca664c424fbba6c589c8fbfdd, type: 3}
   - name: Cabinet
     ID: 9
     size: {x: 1, y: 1}
@@ -97,9 +97,63 @@ MonoBehaviour:
     objectPlacementType: 5
     prefab: {fileID: 7302890930328557534, guid: 461a28ae89650d14b98b3177d157198f, type: 3}
     previewObject: {fileID: 7302890930328557534, guid: 461a28ae89650d14b98b3177d157198f, type: 3}
-  - name: green sofa
+  - name: Sofa
     ID: 14
     size: {x: 4, y: 2}
     objectPlacementType: 5
     prefab: {fileID: 8277564612505451786, guid: 8009b0d6883bb41ba800933eb907c15b, type: 3}
     previewObject: {fileID: 8277564612505451786, guid: 8009b0d6883bb41ba800933eb907c15b, type: 3}
+  - name: Armchair
+    ID: 15
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 4756053164052020678, guid: 595598fbddf7e4d60b9a81f1dab7d7f5, type: 3}
+    previewObject: {fileID: 4756053164052020678, guid: 595598fbddf7e4d60b9a81f1dab7d7f5, type: 3}
+  - name: Closet
+    ID: 16
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 2680311449559618606, guid: 204ffbd92cc4b48e6bdc080c70861867, type: 3}
+    previewObject: {fileID: 2680311449559618606, guid: 204ffbd92cc4b48e6bdc080c70861867, type: 3}
+  - name: Desk
+    ID: 17
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 3707731163418793290, guid: 72ce32659fa2f4dd5b09bdd823b347f8, type: 3}
+    previewObject: {fileID: 3707731163418793290, guid: 72ce32659fa2f4dd5b09bdd823b347f8, type: 3}
+  - name: LowTable
+    ID: 18
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 5742319822113827019, guid: 48e7af1a506bf4b8d82aeeaf549e720e, type: 3}
+    previewObject: {fileID: 5742319822113827019, guid: 48e7af1a506bf4b8d82aeeaf549e720e, type: 3}
+  - name: OfficeChair
+    ID: 19
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 8197543495931711140, guid: aee5e5bac80df47a19cb81f827124827, type: 3}
+    previewObject: {fileID: 8197543495931711140, guid: aee5e5bac80df47a19cb81f827124827, type: 3}
+  - name: Shelf
+    ID: 20
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 7281800442589241360, guid: 0acf915819e4e4bf481507f8f6eaab4d, type: 3}
+    previewObject: {fileID: 7281800442589241360, guid: 0acf915819e4e4bf481507f8f6eaab4d, type: 3}
+  - name: Storage
+    ID: 21
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 7052969733565694091, guid: 6b977cc35dd954b4e902c07071c0550f, type: 3}
+    previewObject: {fileID: 7052969733565694091, guid: 6b977cc35dd954b4e902c07071c0550f, type: 3}
+  - name: TVSet
+    ID: 22
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 6966110209557405209, guid: 1347156fa37404926b978a23a1f93783, type: 3}
+    previewObject: {fileID: 6966110209557405209, guid: 1347156fa37404926b978a23a1f93783, type: 3}
+  - name: WhitewareLow
+    ID: 23
+    size: {x: 0, y: 0}
+    objectPlacementType: 5
+    prefab: {fileID: 3726463530687053751, guid: b47138fdea3c84feab25bff64029f9dc, type: 3}
+    previewObject: {fileID: 3726463530687053751, guid: b47138fdea3c84feab25bff64029f9dc, type: 3}

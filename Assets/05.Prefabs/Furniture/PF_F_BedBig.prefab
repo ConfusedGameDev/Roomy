@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3331271807609403668}
   - component: {fileID: 957996583472383920}
   m_Layer: 0
-  m_Name: PF_F_Bed
+  m_Name: PF_F_BedBig
   m_TagString: Area_Bedroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
