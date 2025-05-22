@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Cinemachine;
+using System;
+using UnityEngine.UI;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -28,6 +30,9 @@ public class CameraMovement : MonoBehaviour
     private Quaternion targetRotation;
     private Vector2 input;
 
+    public Scrollbar zoomScrollbar;
+     
+
     private void Start()
     {
         cameraTransposer = cameraReference.GetCinemachineComponent<CinemachineTransposer>();
@@ -37,30 +42,43 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+
         HandleInput();
         ApplyMovement();
         ApplyRotation();
-        ApplyZoom();
+        //ApplyZoom();
+       
     }
     public void updateVerticalRotation(float delta)
     {
       
         targetRotation *= Quaternion.Euler(0f, delta * rotationSpeed , 0f);
     }
+
+    public void goToTopView()
+    {
+        if (zoomScrollbar)
+        {
+            zoomScrollbar.value = 0;
+        }
+    }
     private void HandleInput()
     {
         // Movement input
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (zoomScrollbar)
+        {
+            zoomScrollbar.value -= Input.mouseScrollDelta.y*Time.deltaTime;
+        }
+            // ----- PC: Right-mouse drag Y-rotation -----
+            //if (Input.GetMouseButton(1))
+            //{
+            //     float mouseDeltaX = Input.GetAxis("Mouse X");
+            //   targetRotation *= Quaternion.Euler(0f, mouseDeltaX * rotationSpeed * Time.deltaTime, 0f);
+            //  }
 
-        // ----- PC: Right-mouse drag Y-rotation -----
-        //if (Input.GetMouseButton(1))
-        //{
-       //     float mouseDeltaX = Input.GetAxis("Mouse X");
-         //   targetRotation *= Quaternion.Euler(0f, mouseDeltaX * rotationSpeed * Time.deltaTime, 0f);
-      //  }
-
-        // ----- Mobile: Two-finger twist Y-rotation -----
-        if (Input.touchCount == 2)
+            // ----- Mobile: Two-finger twist Y-rotation -----
+            if (Input.touchCount == 2)
         {
             Touch t0 = Input.GetTouch(0);
             Touch t1 = Input.GetTouch(1);
@@ -116,6 +134,16 @@ public class CameraMovement : MonoBehaviour
             newZoom,
             Time.deltaTime / movementTime
         );
+    }
+
+    public void ApplyZoom(Single delta)
+    {
+        cameraTransposer.m_FollowOffset = Vector3.Lerp(
+            zoomLimitClose,
+            zoomLimitFar,
+            1-delta
+        );
+       
     }
 
     private Vector3 ClampVector(Vector3 value, Vector3 min, Vector3 max)

@@ -59,7 +59,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -114,27 +114,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_SizeDelta.x
@@ -174,11 +174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -36.660004
       objectReference: {fileID: 0}
     - target: {fileID: 2396143955860508512, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -195,6 +195,18 @@ PrefabInstance:
     - target: {fileID: 3429407123395070241, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
       propertyPath: m_Name
       value: VerticalScrollbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5733806321358133398, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5733806321358133398, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5733806321358133398, guid: ab9ef6bf2276443409b57a3db3390d22, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
