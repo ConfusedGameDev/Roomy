@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -129,8 +129,8 @@ TextureImporter:
       name: T_UI_BedSmall_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 111
+        x: 36
+        y: 331
         width: 1406
         height: 775
       alignment: 0
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_UI_BedSmall_0: -6863542782267246294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
