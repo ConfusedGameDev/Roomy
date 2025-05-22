@@ -1340,8 +1340,8 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4439,7 +4439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913320101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3826835, y: 1e-45, z: -1e-45, w: 0.92387956}
+  m_LocalRotation: {x: 0.3826835, y: 1e-45, z: -0, w: 0.9238795}
   m_LocalPosition: {x: -0.36, y: 15, z: -14.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7328,6 +7328,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713718525}
   m_CullTransparentMesh: 1
+--- !u!114 &1760597734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 83757370578719209, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+  m_PrefabInstance: {fileID: 8373459797522269737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1767426716
 GameObject:
   m_ObjectHideFlags: 0
@@ -10091,6 +10102,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 27405465951257636, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1271131054}
+    - target: {fileID: 170570689976265176, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_Color.a
+      value: 0.54901963
+      objectReference: {fileID: 0}
     - target: {fileID: 176490004770200675, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10267,6 +10286,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1810497447734731918, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810497447734731918, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1760597734}
     - target: {fileID: 2096477938526717235, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10387,6 +10414,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3031996607542099156, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1271131054}
     - target: {fileID: 3142425090649114308, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10403,6 +10434,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3345844461219248643, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1271131054}
     - target: {fileID: 3394529484357384436, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10427,6 +10462,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3689868071604178954, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1271131054}
     - target: {fileID: 3785766296871195145, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10707,6 +10746,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5816636585566178471, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1271131054}
     - target: {fileID: 6149375586866939999, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10807,6 +10850,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7412867236535612682, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_Inertia
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412867236535612682, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412867236535612682, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 7413661255369022847, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10860,6 +10915,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8144089427009904073, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1271131054}
+    - target: {fileID: 8314338913160390087, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1271131054}

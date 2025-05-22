@@ -99,37 +99,37 @@ MonoBehaviour:
     previewObject: {fileID: 8197543495931711140, guid: aee5e5bac80df47a19cb81f827124827, type: 3}
   - name: Storage small
     ID: 14
-    size: {x: 0, y: 0}
+    size: {x: 1, y: 1}
     objectPlacementType: 0
     prefab: {fileID: 4234228911423454389, guid: 0a6d61cd16eac47bc9e4cd55543f623d, type: 3}
     previewObject: {fileID: 4234228911423454389, guid: 0a6d61cd16eac47bc9e4cd55543f623d, type: 3}
   - name: Storage big
     ID: 15
-    size: {x: 0, y: 0}
+    size: {x: 1, y: 1}
     objectPlacementType: 0
     prefab: {fileID: 7052969733565694091, guid: 6b977cc35dd954b4e902c07071c0550f, type: 3}
     previewObject: {fileID: 7052969733565694091, guid: 6b977cc35dd954b4e902c07071c0550f, type: 3}
   - name: Closet
     ID: 16
-    size: {x: 0, y: 0}
+    size: {x: 1, y: 1}
     objectPlacementType: 0
     prefab: {fileID: 2680311449559618606, guid: 204ffbd92cc4b48e6bdc080c70861867, type: 3}
     previewObject: {fileID: 2680311449559618606, guid: 204ffbd92cc4b48e6bdc080c70861867, type: 3}
   - name: Shelf
     ID: 17
-    size: {x: 0, y: 0}
+    size: {x: 1, y: 1}
     objectPlacementType: 0
     prefab: {fileID: 7281800442589241360, guid: 0acf915819e4e4bf481507f8f6eaab4d, type: 3}
     previewObject: {fileID: 7281800442589241360, guid: 0acf915819e4e4bf481507f8f6eaab4d, type: 3}
-  - name: Whitware high
-    ID: 18
-    size: {x: 0, y: 0}
-    objectPlacementType: 0
-    prefab: {fileID: 9167734009561608655, guid: 2315ab6ca664c424fbba6c589c8fbfdd, type: 3}
-    previewObject: {fileID: 9167734009561608655, guid: 2315ab6ca664c424fbba6c589c8fbfdd, type: 3}
   - name: Whiteware low
-    ID: 19
-    size: {x: 0, y: 0}
+    ID: 18
+    size: {x: 1, y: 1}
     objectPlacementType: 0
     prefab: {fileID: 3726463530687053751, guid: b47138fdea3c84feab25bff64029f9dc, type: 3}
     previewObject: {fileID: 3726463530687053751, guid: b47138fdea3c84feab25bff64029f9dc, type: 3}
+  - name: Whitware high
+    ID: 19
+    size: {x: 1, y: 1}
+    objectPlacementType: 0
+    prefab: {fileID: 9167734009561608655, guid: 2315ab6ca664c424fbba6c589c8fbfdd, type: 3}
+    previewObject: {fileID: 9167734009561608655, guid: 2315ab6ca664c424fbba6c589c8fbfdd, type: 3}
