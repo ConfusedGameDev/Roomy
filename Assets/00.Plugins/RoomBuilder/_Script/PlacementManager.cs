@@ -369,9 +369,16 @@ public class PlacementManager : MonoBehaviour
     private void HandleSelectionStarted()
     {
         if (input.IsInteractingWithUI())
+        {
+            Debug.Log("Interacting with UI Ignoring");
             return;
+        }
         if (buildingState == null)
+        {
+            Debug.Log("buildingState is null. Check if it is initialized.");
+
             throw new Exception("buildingState is null. Check if it is initialized.");
+        }
         buildingState.HandleSelectionStarted(input.GetSelectedMapPosition());
     }
 
@@ -397,8 +404,11 @@ public class PlacementManager : MonoBehaviour
     void Update()
     {
         if (buildingState == null || input.IsInteractingWithUI())
-            return;
-
+        {
+            var bS = (buildingState == null) ? "null" : "not Null";
+            Debug.Log($"Building state {bS} interactingWith UI {input.IsInteractingWithUI()}");
+             return;
+        }
         buildingState.HandleSelectionChanged(input.GetSelectedMapPosition());
     }
 

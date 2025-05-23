@@ -4439,7 +4439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913320101}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3826835, y: 1e-45, z: -0, w: 0.9238795}
+  m_LocalRotation: {x: 0.3826835, y: 1e-45, z: -1e-45, w: 0.92387956}
   m_LocalPosition: {x: -0.36, y: 15, z: -14.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10294,6 +10294,14 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1760597734}
+    - target: {fileID: 1993273892992332785, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993273892992332785, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1216429487, guid: 2d92b31bcf1194d169d1bf684b2e324c, type: 3}
     - target: {fileID: 2096477938526717235, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10911,6 +10919,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7836878896000809632, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116762546484981536, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116762546484981536, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116762546484981536, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116762546484981536, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116762546484981536, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116762546484981536, guid: 3a1eff779139cbe43b4afdb9df173ed2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

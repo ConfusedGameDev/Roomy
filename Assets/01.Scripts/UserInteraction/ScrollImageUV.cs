@@ -30,9 +30,12 @@ public class ScrollImageUV : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        dragging = true;
-        lastMousePos = eventData.position;
-        startMousePos = eventData.position;
+        if (eventData.pointerCurrentRaycast.gameObject == gameObject)
+        {
+            dragging = true;
+            lastMousePos = eventData.position;
+            startMousePos = eventData.position;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
