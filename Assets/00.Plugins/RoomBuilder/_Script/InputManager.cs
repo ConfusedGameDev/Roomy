@@ -39,8 +39,37 @@ public class InputManager : MonoBehaviour
     }
 
     public bool IsInteractingWithUI()
-        => EventSystem.current.IsPointerOverGameObject();
+    { 
+        var isPointerOverGO=EventSystem.current.IsPointerOverGameObject();
+        if (isPointerOverGO)
+        {
+            Debug.Log("pointer is over " + GetUIElementUnderPointer());
+        }
+        else
+        {
 
+        }
+
+
+        return isPointerOverGO;
+    }
+    public static GameObject GetUIElementUnderPointer()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+        if (raycastResults.Count > 0)
+        {
+            return raycastResults[0].gameObject; // Top-most UI element
+        }
+
+        return null;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
