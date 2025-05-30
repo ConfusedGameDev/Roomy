@@ -117,7 +117,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -535,7 +535,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_UI_RotationCircle_0: 5671474297303387877
+      T_UI_RotationCircle_1: 8678890508748793135
+      T_UI_RotationCircle_10: 3816172398015755639
+      T_UI_RotationCircle_11: 4221903831173478901
+      T_UI_RotationCircle_12: 522257336612016933
+      T_UI_RotationCircle_13: -6145838383911996651
+      T_UI_RotationCircle_14: -5414757490811208378
+      T_UI_RotationCircle_15: 5596562598374654041
+      T_UI_RotationCircle_2: -5009083812378511802
+      T_UI_RotationCircle_3: -7627986172893548536
+      T_UI_RotationCircle_4: 4444219210536723149
+      T_UI_RotationCircle_5: -1894230692466421513
+      T_UI_RotationCircle_6: -2452741823754674681
+      T_UI_RotationCircle_7: 8383146421820571348
+      T_UI_RotationCircle_8: -3217967785185003806
+      T_UI_RotationCircle_9: 1687420148951199104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
