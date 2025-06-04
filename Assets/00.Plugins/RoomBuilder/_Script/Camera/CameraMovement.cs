@@ -68,7 +68,7 @@ public class CameraMovement : MonoBehaviour
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         if (zoomScrollbar)
         {
-            zoomScrollbar.value -= Input.mouseScrollDelta.y*Time.deltaTime;
+            //zoomScrollbar.value -= Input.mouseScrollDelta.y*Time.deltaTime;
         }
             // ----- PC: Right-mouse drag Y-rotation -----
             //if (Input.GetMouseButton(1))

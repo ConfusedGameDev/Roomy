@@ -59,6 +59,12 @@ public class StructurePlacer : MonoBehaviour
             newObject.transform.localScale = new Vector3(1, 0, 1);
             newObject.transform.DOScaleY(1, scalingDelay);
         }
+
+        FurnitureData data;
+        if(newObject.TryGetComponent<FurnitureData>(out data)) 
+        {
+            data.enableInteraction = true;
+        }
         return freeIndex;
     }
 
