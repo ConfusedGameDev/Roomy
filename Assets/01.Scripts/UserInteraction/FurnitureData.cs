@@ -66,6 +66,7 @@ public class FurnitureData : MonoBehaviour
     {
         if(furnitureUI && !furnitureUI.gameObject.activeSelf)
         {
+            shouldUpdateRotation = false;
             var initialScale = furnitureUI.transform.localScale;
             var finalY= initialScale.y;
             initialScale.y = 0;
@@ -83,7 +84,7 @@ public class FurnitureData : MonoBehaviour
             clickDuration += Time.deltaTime;
         float scrollDelta = Input.mouseScrollDelta.y;
 
-        if (scrollDelta != 0)
+        if (shouldUpdateRotation && scrollDelta != 0)
         {
             // Accumulate rotation in steps
             accumulatedRotation += scrollDelta;
