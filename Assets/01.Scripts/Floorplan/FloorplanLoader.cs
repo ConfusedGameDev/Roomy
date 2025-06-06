@@ -39,9 +39,7 @@ public class FloorplanLoader : MonoBehaviour
     {
         // Destroy previous geometry
         for (int i = transform.childCount - 1; i >= 0; i--)
-        {
             DestroyImmediate(transform.GetChild(i).gameObject);
-        }
 
         if (jsonFile == null)
         {
@@ -51,13 +49,20 @@ public class FloorplanLoader : MonoBehaviour
 
         var data = JsonConvert.DeserializeObject<LabelmeData>(jsonFile.text);
 
+        Debug.Log($"[DEBUG] Shapes in JSON: {data.shapes.Count}");
+
         // --- Floor ---
         var floorShape = data.shapes.FirstOrDefault(s => s.label == "area");
         if (floorShape != null)
         {
+            Debug.Log("[DEBUG] Floor shape found.");
             var floorObj = BuildFloor(floorShape.points);
             floorObj.name = "Floor";
             floorObj.transform.SetParent(transform);
+        }
+        else
+        {
+            Debug.LogWarning("[DEBUG] No floor shape found.");
         }
 
         // --- Walls ---
@@ -65,6 +70,10 @@ public class FloorplanLoader : MonoBehaviour
             .Where(s => s.label == "wall" && s.shape_type == "rectangle")
             .Select(s => s.points)
             .ToList();
+
+        Debug.Log($"[DEBUG] Wall rectangles found: {wallRects.Count}");
+        for (int i = 0; i < wallRects.Count; i++)
+            Debug.Log($"[DEBUG] Wall rect #{i}: {JsonConvert.SerializeObject(wallRects[i])}");
 
         var wallObj = BuildWallsFromRectangles(wallRects, wallHeight);
         wallObj.name = "Walls";
@@ -114,6 +123,9 @@ public class FloorplanLoader : MonoBehaviour
         var edges = new List<Edge>();
         var vertices = new HashSet<Vector2>();
 
+        int degenerateCount = 0;
+        int processedCount = 0;
+
         foreach (var rect in rectangles)
         {
             Vector2 a = new Vector2(rect[0][0], rect[0][1]);
@@ -126,7 +138,14 @@ public class FloorplanLoader : MonoBehaviour
 
             // skip degenerate
             if (Mathf.Approximately(xMin, xMax) || Mathf.Approximately(yMin, yMax))
+            {
+                Debug.LogWarning($"[DEBUG] Degenerate wall rectangle skipped: {JsonConvert.SerializeObject(rect)}");
+                degenerateCount++;
                 continue;
+            }
+
+            processedCount++;
+            Debug.Log($"[DEBUG] Wall rect processed: a={a}, b={b}, corners=({xMin},{yMin})-({xMax},{yMax})");
 
             Vector2[] corners = new Vector2[]
             {
@@ -145,20 +164,36 @@ public class FloorplanLoader : MonoBehaviour
             }
         }
 
+        Debug.Log($"[DEBUG] Wall rectangles processed: {processedCount}, degenerate skipped: {degenerateCount}");
+
         var splitEdges = SplitEdgesAtIntersections(edges);
+        Debug.Log($"[DEBUG] Split edges count: {splitEdges.Count}");
+
         var loops = FindClosedLoops(splitEdges);
+        Debug.Log($"[DEBUG] Closed loops found: {loops.Count}");
+        for (int i = 0; i < loops.Count; i++)
+            Debug.Log($"[DEBUG] Loop #{i}: {string.Join(", ", loops[i].Select(v => v.ToString()))}");
 
         GameObject root = new GameObject("Walls");
 
-        foreach (var loop in loops)
+        for (int i = 0; i < loops.Count; i++)
         {
+            var loop = loops[i];
+
             if (loop.Count < 3)
             {
-                Debug.LogWarning("Skipping loop with fewer than 3 points.");
+                Debug.LogWarning($"[DEBUG] Skipping loop with fewer than 3 points: {loop.Count}");
                 continue;
             }
 
+            Debug.Log($"[DEBUG] Triangulating loop #{i} with {loop.Count} points.");
+
             var mesh = TriangulateAndExtrude(loop, height);
+            if (mesh == null)
+            {
+                Debug.LogWarning($"[DEBUG] Triangulation failed for loop #{i}.");
+                continue;
+            }
             mesh.transform.SetParent(root.transform);
         }
 
@@ -167,6 +202,12 @@ public class FloorplanLoader : MonoBehaviour
 
     GameObject TriangulateAndExtrude(List<Vector2> loop, float height)
     {
+        if (loop.Count < 3)
+        {
+            Debug.LogWarning("[DEBUG] Triangulation skipped, fewer than 3 points.");
+            return null;
+        }
+
         Vector3[] baseVerts = loop.Select(p => new Vector3(p.x, 0, p.y)).ToArray();
         int[] tris = new int[(baseVerts.Length - 2) * 3];
 
@@ -218,6 +259,8 @@ public class FloorplanLoader : MonoBehaviour
 
         mr.material = wallMaterial != null ? wallMaterial : new Material(Shader.Find("Standard"));
         wall.transform.localScale = new Vector3(1, 1, -1); // mirror on Z
+
+        Debug.Log($"[DEBUG] Created wall mesh with {fullVerts.Length} vertices, {allTris.Count / 3} triangles");
 
         return wall;
     }
