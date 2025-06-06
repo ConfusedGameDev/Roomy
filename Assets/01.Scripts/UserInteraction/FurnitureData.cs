@@ -20,8 +20,17 @@ public class FurnitureData : MonoBehaviour
     public Vector3 mouseDelta;
 
     public float dragMoveSensitivity = 0.1f;
-     private void Start()
+
+
+    [Tooltip("Select only the floor layer(s) here.")]
+    public LayerMask floorLayerMask;
+
+    private Camera cam;
+    private bool isDragging = false;
+    private Vector3 offset; // objectPos - initialHitPoint
+    private void Start()
     {
+        cam = Camera.main;
         Debug.Log("Im alive");
     }
     public void OnMouseEnter()
@@ -99,8 +108,35 @@ public class FurnitureData : MonoBehaviour
 
         if (isMouseDown && clickDuration > 0.35f)
         {
-            HandleDragMovement();
 
+            if (!isDragging)
+            {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hitInfo;
+                if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, floorLayerMask))
+                {
+                    Debug.Log("Hit floor at: " + hitInfo.point);
+                    // Compute and store the offset between object and where we hit the floor
+                    offset = transform.position - hitInfo.point;
+                    isDragging = true;
+                }
+            }
+            else if (isDragging)
+            {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hitInfo;
+
+                if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, floorLayerMask))
+                {
+                    Debug.Log("Dragging object to: " + hitInfo.point);
+                    // Place object so it stays under the cursor (including original offset)
+                    transform.position = hitInfo.point ;
+                }
+            }
+        }
+        else
+        {
+            isDragging = false; // Reset dragging state if not holding long enough
         }
 
     }
