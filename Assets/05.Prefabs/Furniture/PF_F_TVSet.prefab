@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationUI: {fileID: 7304487899572553984}
+  movementUI: {fileID: 4998779176561575976}
   furnitureUI: {fileID: 801111226229975944}
   shouldUpdateRotation: 0
   shouldUpdateMovement: 0
@@ -360,6 +361,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3301319386539252127, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6517558939037257735, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
       propertyPath: m_Name
       value: PF_UI_Indicators
@@ -369,6 +374,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
+--- !u!1 &4998779176561575976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3301319386539252127, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
+  m_PrefabInstance: {fileID: 7534415869797650871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7304487899572553984 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 995680740739094711, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
