@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationUI: {fileID: 5341919598391823162}
+  movementUI: {fileID: 7648156378538461714}
   furnitureUI: {fileID: 3726234261130115647}
   shouldUpdateRotation: 0
   shouldUpdateMovement: 0
@@ -632,5 +633,10 @@ Transform:
 --- !u!1 &5341919598391823162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 995680740739094711, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
+  m_PrefabInstance: {fileID: 5184507154469753741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7648156378538461714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3301319386539252127, guid: 8448bdfdfe92a5549ae2ef9335925206, type: 3}
   m_PrefabInstance: {fileID: 5184507154469753741}
   m_PrefabAsset: {fileID: 0}

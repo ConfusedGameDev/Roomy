@@ -5,6 +5,7 @@ public class FurnitureData : MonoBehaviour
 {
 
     public GameObject rotationUI;
+    public GameObject movementUI;
     public GameObject furnitureUI;
     Vector3 startMousePos;
     public bool shouldUpdateRotation;
@@ -133,10 +134,16 @@ public class FurnitureData : MonoBehaviour
                     transform.position = hitInfo.point ;
                 }
             }
+            if(rotationUI)
+                rotationUI.SetActive(false);
+            if(movementUI)
+            movementUI.SetActive(isDragging);
         }
         else
         {
             isDragging = false; // Reset dragging state if not holding long enough
+            if(movementUI)
+            movementUI.SetActive(false);
         }
 
     }
