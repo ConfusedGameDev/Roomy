@@ -119,69 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &129567243
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 129567245}
-  - component: {fileID: 129567244}
-  - component: {fileID: 129567246}
-  m_Layer: 0
-  m_Name: FloorPlanDebugger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &129567244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129567243}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd20e76e1613a4ab28e40af9f5714879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: bc0dab44495564cc2a542ab43d10ff57, type: 3}
-  wallHeight: 2.5
-  wallMaterial: {fileID: 2100000, guid: f5aa87cb571034b9585084a0abc6b301, type: 2}
-  floorMaterial: {fileID: 2100000, guid: 555ebb6303ddf4daabc81d8294394942, type: 2}
-  updateEveryFrame: 0
---- !u!4 &129567245
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129567243}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208.74258, y: 35.07071, z: -467.7228}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &129567246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129567243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43961f316efb4d6492a9af24faf6614, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorplanJson: {fileID: 4900000, guid: bc0dab44495564cc2a542ab43d10ff57, type: 3}
 --- !u!1 &289989777
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &289989778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +377,87 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &788486029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788486033}
+  - component: {fileID: 788486032}
+  - component: {fileID: 788486031}
+  - component: {fileID: 788486030}
+  m_Layer: 0
+  m_Name: FloorPlanDebugger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &788486030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788486029}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c567451bb3ee5445d8c5a99d5eb7f674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorplanJson: {fileID: 0}
+  showRaw: 1
+  showMerged: 1
+--- !u!114 &788486031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788486029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43961f316efb4d6492a9af24faf6614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorplanJson: {fileID: 4900000, guid: bc0dab44495564cc2a542ab43d10ff57, type: 3}
+  drawOriginals: 1
+  drawSplits: 1
+--- !u!114 &788486032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788486029}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd20e76e1613a4ab28e40af9f5714879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: bc0dab44495564cc2a542ab43d10ff57, type: 3}
+  wallHeight: 2.5
+  wallMaterial: {fileID: 2100000, guid: f5aa87cb571034b9585084a0abc6b301, type: 2}
+  floorMaterial: {fileID: 2100000, guid: 555ebb6303ddf4daabc81d8294394942, type: 2}
+  updateEveryFrame: 0
+--- !u!4 &788486033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788486029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.74258, y: 35.07071, z: -467.7228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347681652
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +469,7 @@ GameObject:
   - component: {fileID: 1347681654}
   - component: {fileID: 1347681653}
   m_Layer: 0
-  m_Name: Square
+  m_Name: RefImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,6 +545,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1478737260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1478737261}
+  - component: {fileID: 1478737262}
+  m_Layer: 0
+  m_Name: FloorPlanUnifier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1478737261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478737260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1478737262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478737260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53508acfd944b4ab794bb78436908261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: bc0dab44495564cc2a542ab43d10ff57, type: 3}
+  intersectionTolerance: 0.1
+  targetLabel: wall
+  debugMode: 1
+  showOriginalRectangles: 0
+  showProcessedEdges: 1
+  showIntersectionPoints: 1
+  showNormalDirections: 1
+  originalRectangleColor: {r: 0, g: 0, b: 1, a: 1}
+  edgeColor: {r: 0.5271213, g: 1, b: 0, a: 1}
+  intersectionColor: {r: 1, g: 0, b: 0, a: 1}
+  inwardNormalColor: {r: 0, g: 1, b: 0, a: 1}
+  outwardNormalColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1 &1899476400
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1899476401
 Transform:
   m_ObjectHideFlags: 0
@@ -580,8 +655,9 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 557635526}
-  - {fileID: 1899476401}
-  - {fileID: 129567245}
   - {fileID: 289989780}
+  - {fileID: 557635526}
   - {fileID: 1347681654}
+  - {fileID: 1899476401}
+  - {fileID: 788486033}
+  - {fileID: 1478737261}
