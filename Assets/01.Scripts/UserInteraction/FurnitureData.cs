@@ -1,5 +1,7 @@
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FurnitureData : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class FurnitureData : MonoBehaviour
     Vector3 startMousePos;
     public bool shouldUpdateRotation;
     public bool shouldUpdateMovement;
-    public float rotationSpeed=12.5f;
+    public float rotationSpeed = 12.5f;
 
     public int amountofClicks = 0;
     public bool enableInteraction;
@@ -29,10 +31,87 @@ public class FurnitureData : MonoBehaviour
     private Camera cam;
     private bool isDragging = false;
     private Vector3 offset; // objectPos - initialHitPoint
+
+    public Vector3 objectDimensions;
+    public Renderer rendererer;
+
+    public InputField inputFieldX,inputFieldY,inputFieldZ;
+    FurnitureDataInputHandler inputHandler;
     private void Start()
     {
         cam = Camera.main;
         Debug.Log("Im alive");
+        CheckSize();
+        if(inputFieldX)
+        {
+            inputFieldX.onValueChanged.AddListener(value => CalculateScale());
+        }
+        if (inputFieldY)
+        {
+            inputFieldY.onValueChanged.AddListener(value => CalculateScale());
+
+        }
+        if (inputFieldZ)
+        {
+            inputFieldZ.onValueChanged.AddListener(value => CalculateScale());
+        }
+        if (!rendererer)
+            rendererer = GetComponentInChildren<Renderer>();
+        if(rendererer)
+        {
+            inputHandler = rendererer.GetComponent<FurnitureDataInputHandler>();
+            if(!inputHandler)
+            {
+                inputHandler = rendererer.gameObject.AddComponent<FurnitureDataInputHandler>();
+                inputHandler.setup(this);
+            }
+        }
+
+    }
+    [Button]
+    public void CheckSize()
+    {
+        if (!rendererer)
+            rendererer = GetComponentInChildren<Renderer>();
+        if (rendererer)
+            objectDimensions = rendererer.bounds.size;
+
+    }
+    public Vector3 CalculateScale()
+    {
+        int x = -1;
+        int.TryParse(inputFieldX.text, out x);
+        int y = -1;
+        int.TryParse(inputFieldY.text, out x);
+        int z = -1;
+        int.TryParse(inputFieldZ.text, out x);
+
+        Vector3 newSize = new Vector3(x, y, z);
+        CheckSize();
+        const float EPS = 1e-5f;   // small positive number to avoid /0
+
+        return new Vector3
+        (
+             objectDimensions.x > EPS ? newSize.x / objectDimensions.x : 1f,
+             objectDimensions.y > EPS ? newSize.y / objectDimensions.y : 1f,
+             objectDimensions.z > EPS ? newSize.z / objectDimensions.z : 1f
+        );
+
+    }
+    [Button]
+    public Vector3 CalculateScale(Vector3 newSize)
+    {
+
+        CheckSize();
+        const float EPS = 1e-5f;   // small positive number to avoid /0
+
+        return new Vector3
+        (
+             objectDimensions.x > EPS ?  newSize.x / objectDimensions.x : 1f,
+             objectDimensions.y > EPS ? newSize.y / objectDimensions.y : 1f,
+             objectDimensions.z > EPS ? newSize.z / objectDimensions.z : 1f
+        );
+
     }
     public void OnMouseEnter()
     {
@@ -56,13 +135,13 @@ public class FurnitureData : MonoBehaviour
        
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         isMouseDown = true;
         startMousePos = Input.mousePosition;
 
     }
-    private void OnMouseUp()
+    public void OnMouseUp()
     {
         isMouseDown = false;
         if(clickDuration<0.2f)
