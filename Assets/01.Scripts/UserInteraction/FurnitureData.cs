@@ -1,8 +1,11 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using Slicer;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+[RequireComponent(typeof(SlicerController))]
 public class FurnitureData : MonoBehaviour
 {
 
@@ -32,31 +35,38 @@ public class FurnitureData : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset; // objectPos - initialHitPoint
 
-    public Vector3 objectDimensions;
+    [HorizontalGroup("ObjectDimensions")]
+    public int objectDimensionsX;
+    [HorizontalGroup("ObjectDimensions")]
+    public int objectDimensionsY;
+    [HorizontalGroup("ObjectDimensions")]
+    public int objectDimensionsZ;
     public Renderer rendererer;
 
     public TMPro.TMP_InputField inputFieldX,inputFieldY,inputFieldZ;
     FurnitureDataInputHandler inputHandler;
+    public SlicerController slicerController;
     private void Start()
     {
         cam = Camera.main;
         Debug.Log("Im alive");
+        slicerController = GetComponent<SlicerController>();
         CheckSize();
         if(inputFieldX)
         {
-            inputFieldX.text= objectDimensions.x.ToString("F2");
+            inputFieldX.text= ((int)objectDimensionsX).ToString();
             inputFieldX.onValueChanged.AddListener(value => CalculateScale());
             
         }
         if (inputFieldY)
         {
-            inputFieldY.text = objectDimensions.y.ToString("F2");
+            inputFieldY.text = ((int)objectDimensionsY).ToString();
             inputFieldY.onValueChanged.AddListener(value => CalculateScale());
 
         }
         if (inputFieldZ)
         {
-            inputFieldZ.text = objectDimensions.z.ToString("F2");
+            inputFieldZ.text = ((int)objectDimensionsZ).ToString();
             inputFieldZ.onValueChanged.AddListener(value => CalculateScale());
         }
         if (!rendererer)
@@ -78,42 +88,59 @@ public class FurnitureData : MonoBehaviour
         if (!rendererer)
             rendererer = GetComponentInChildren<Renderer>();
         if (rendererer)
-            objectDimensions = rendererer.bounds.size;
+        {
+            objectDimensionsX = Mathf.RoundToInt(rendererer.bounds.size.x * 100f);
+            objectDimensionsY = Mathf.RoundToInt(rendererer.bounds.size.y * 100f);
+            objectDimensionsZ = Mathf.RoundToInt(rendererer.bounds.size.z * 100f);
+            if (inputFieldX)
+                inputFieldX.text = objectDimensionsX.ToString();
+            if (inputFieldY)
+                inputFieldY.text = objectDimensionsY.ToString();
+            if (inputFieldZ)
+                inputFieldZ.text = objectDimensionsZ.ToString();
+        }
+             
 
     }
-    public Vector3 CalculateScale()
+    public void CalculateScale()
     {
         int x = -1;
         int.TryParse(inputFieldX.text, out x);
         int y = -1;
-        int.TryParse(inputFieldY.text, out x);
+        int.TryParse(inputFieldY.text, out y);
         int z = -1;
-        int.TryParse(inputFieldZ.text, out x);
+        int.TryParse(inputFieldZ.text, out z);
 
         Vector3 newSize = new Vector3(x, y, z);
-        CheckSize();
         const float EPS = 1e-5f;   // small positive number to avoid /0
 
-        return new Vector3
+        Vector3 result= new Vector3
         (
-             objectDimensions.x > EPS ? newSize.x / objectDimensions.x : 1f,
-             objectDimensions.y > EPS ? newSize.y / objectDimensions.y : 1f,
-             objectDimensions.z > EPS ? newSize.z / objectDimensions.z : 1f
+             objectDimensionsX > EPS ? newSize.x / objectDimensionsX : 1f,
+             objectDimensionsY > EPS ? newSize.y / objectDimensionsY : 1f,
+             objectDimensionsZ > EPS ? newSize.z / objectDimensionsZ : 1f
         );
+
+        if(slicerController)
+        {
+            slicerController.Size=result;
+            slicerController.RefreshSlice();
+        }
+
 
     }
     [Button]
     public Vector3 CalculateScale(Vector3 newSize)
     {
 
-        CheckSize();
+        
         const float EPS = 1e-5f;   // small positive number to avoid /0
 
         return new Vector3
         (
-             objectDimensions.x > EPS ?  newSize.x / objectDimensions.x : 1f,
-             objectDimensions.y > EPS ? newSize.y / objectDimensions.y : 1f,
-             objectDimensions.z > EPS ? newSize.z / objectDimensions.z : 1f
+              objectDimensionsX > EPS ? newSize.x / objectDimensionsX : 1f,
+             objectDimensionsY > EPS ? newSize.y / objectDimensionsY : 1f,
+             objectDimensionsZ > EPS ? newSize.z / objectDimensionsZ : 1f
         );
 
     }
@@ -157,7 +184,8 @@ public class FurnitureData : MonoBehaviour
 
     public void onTap()
     {
-        if(furnitureUI && !furnitureUI.gameObject.activeSelf)
+        CheckSize();
+        if (furnitureUI && !furnitureUI.gameObject.activeSelf)
         {
             shouldUpdateRotation = false;
             var initialScale = furnitureUI.transform.localScale;
