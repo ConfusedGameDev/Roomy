@@ -145,6 +145,10 @@ namespace Slicer
 
                     msmmcd = null;
                 }
+                else if (msmmcd?.MeshSlicerDetails != null && msmmcd.MeshSlicerDetails.OriginalSharedMesh != null && msmmcd.MeshSlicerDetails.SlicedMesh != null)
+                {
+                    // Do Nothing
+                }
                 else if (meshCollider.sharedMesh == null)
                 {
                     return;
@@ -153,11 +157,11 @@ namespace Slicer
                 Mesh meshToSearchWith;
                 if (msmmcd != null && msmmcd.MeshSlicerDetails != null)
                 {
-                    if (msmmcd.MeshSlicerDetails.SlicedMesh != msmmcd.MeshCollider.sharedMesh && SlicingEnabled)
+                    if (meshCollider.sharedMesh != null && msmmcd.MeshSlicerDetails.SlicedMesh != msmmcd.MeshCollider.sharedMesh && SlicingEnabled)
                     {
                         meshToSearchWith = meshCollider.sharedMesh;
                     }
-                    else if (msmmcd.MeshSlicerDetails.OriginalSharedMesh != msmmcd.MeshCollider.sharedMesh && !SlicingEnabled)
+                    else if (meshCollider.sharedMesh != null && msmmcd.MeshSlicerDetails.OriginalSharedMesh != msmmcd.MeshCollider.sharedMesh && !SlicingEnabled)
                     {
                         meshToSearchWith = meshCollider.sharedMesh;
                     }
