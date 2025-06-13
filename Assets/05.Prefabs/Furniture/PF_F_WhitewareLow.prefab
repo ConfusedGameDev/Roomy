@@ -43,6 +43,9 @@ GameObject:
   - component: {fileID: 465266084916018312}
   - component: {fileID: 5179664035402710030}
   - component: {fileID: 2161258122999078187}
+  - component: {fileID: 8991417538017492439}
+  - component: {fileID: 1160369536300329804}
+  - component: {fileID: 4624377361226209826}
   m_Layer: 0
   m_Name: PF_F_WhitewareLow
   m_TagString: Area_FacilityBathroom
@@ -114,6 +117,83 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &8991417538017492439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726463530687053751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b790d73e366344873a5c0fd7fe11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: {x: 1, y: 1, z: 1}
+  Slices: {x: 0.82121354, y: 0.89831346, z: 0.81414205}
+  Offset: {x: 0, y: 0, z: 0}
+  previousHash:
+    serializedVersion: 2
+    Hash: d882cd0df158016859376a0ef48bf537
+--- !u!114 &1160369536300329804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726463530687053751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d616ad4f0642c409a8c67a87289210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkipBoundsCalculation: 0
+  SkipVertices: 0
+  SkipUvs: 1
+  UvMappingSettings:
+    UvScale: {x: 1, y: 1}
+    SurfaceTextureOffset: {x: 0, y: 0, z: 0}
+    MappingMode: 0
+    GenerateInverseMappings: 0
+    Mappings:
+    - SurfaceNormal: {x: 1, y: 0, z: 0}
+      SurfaceTextureDirection: {x: 1, y: 0, z: 0}
+    - SurfaceNormal: {x: 0, y: 0, z: 1}
+      SurfaceTextureDirection: {x: 0, y: 1, z: 0}
+  meshDetailsList:
+  - Id: 130044
+    Transform: {fileID: 4908406445808810715}
+    MeshFilter: {fileID: 8336710730416190846}
+    OriginalSharedMesh: {fileID: -1963788520461073278, guid: 5cf95578469d24f63814a52dee45d860, type: 3}
+    SlicedMesh: {fileID: 0}
+    MeshRenderer: {fileID: 6076769271129833908}
+    SlicedVertHash:
+      serializedVersion: 2
+      Hash: b68ec89ac41f6f8f5e5225aff341a8b6
+    SlicedUvHash:
+      serializedVersion: 2
+      Hash: 93c2fbfc7527e2cf5a927e6034776154
+--- !u!114 &4624377361226209826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3726463530687053751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3948fc510484e24fa46e965c2cfdd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkipBoundsCalculation: 0
+  SkipVertices: 0
+  meshColliderDetailsList: []
+  meshSlicerManagedMeshColliderDetailsList: []
+  boxColliderDetailsList: []
+  unsupportedColliderDetailsList: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &5279309766711504172
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: 5cf95578469d24f63814a52dee45d860, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5cf95578469d24f63814a52dee45d860, type: 3}
       propertyPath: m_Name
       value: SM_Whiteware_Low
@@ -311,6 +395,16 @@ PrefabInstance:
 --- !u!4 &4908406445808810715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5cf95578469d24f63814a52dee45d860, type: 3}
+  m_PrefabInstance: {fileID: 4869676343359872304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6076769271129833908 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 5cf95578469d24f63814a52dee45d860, type: 3}
+  m_PrefabInstance: {fileID: 4869676343359872304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &8336710730416190846 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: 5cf95578469d24f63814a52dee45d860, type: 3}
   m_PrefabInstance: {fileID: 4869676343359872304}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6855454489137615101

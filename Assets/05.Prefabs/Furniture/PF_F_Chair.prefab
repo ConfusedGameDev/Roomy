@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7621554946093286088}
   - component: {fileID: 4817487802127375640}
   - component: {fileID: 5835989183024360321}
+  - component: {fileID: 6515045646097612327}
+  - component: {fileID: 6422006044253038517}
+  - component: {fileID: 6865178559175566607}
   m_Layer: 0
   m_Name: PF_F_Chair
   m_TagString: Area_Dining
@@ -82,6 +85,83 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &6515045646097612327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711307788333276086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b790d73e366344873a5c0fd7fe11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: {x: 1, y: 1, z: 1}
+  Slices: {x: 0.67272013, y: 0.51008576, z: 0.41696408}
+  Offset: {x: 0, y: 0, z: 0}
+  previousHash:
+    serializedVersion: 2
+    Hash: 705fa3808d67bc68d7b18256a1228b4a
+--- !u!114 &6422006044253038517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711307788333276086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d616ad4f0642c409a8c67a87289210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkipBoundsCalculation: 0
+  SkipVertices: 0
+  SkipUvs: 1
+  UvMappingSettings:
+    UvScale: {x: 1, y: 1}
+    SurfaceTextureOffset: {x: 0, y: 0, z: 0}
+    MappingMode: 0
+    GenerateInverseMappings: 0
+    Mappings:
+    - SurfaceNormal: {x: 1, y: 0, z: 0}
+      SurfaceTextureDirection: {x: 1, y: 0, z: 0}
+    - SurfaceNormal: {x: 0, y: 0, z: 1}
+      SurfaceTextureDirection: {x: 0, y: 1, z: 0}
+  meshDetailsList:
+  - Id: 128436
+    Transform: {fileID: 3524318750763032171}
+    MeshFilter: {fileID: 524456800409719246}
+    OriginalSharedMesh: {fileID: -6903756349217727178, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
+    SlicedMesh: {fileID: 0}
+    MeshRenderer: {fileID: 2351945426579842308}
+    SlicedVertHash:
+      serializedVersion: 2
+      Hash: 7cd7660bbf533cfa95d2dcc67e51235b
+    SlicedUvHash:
+      serializedVersion: 2
+      Hash: 93c2fbfc7527e2cf5a927e6034776154
+--- !u!114 &6865178559175566607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711307788333276086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3948fc510484e24fa46e965c2cfdd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkipBoundsCalculation: 0
+  SkipVertices: 0
+  meshColliderDetailsList: []
+  meshSlicerManagedMeshColliderDetailsList: []
+  boxColliderDetailsList: []
+  unsupportedColliderDetailsList: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &5392480463177941267
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
       propertyPath: m_Name
       value: SM_Dining_Chair
@@ -308,6 +392,16 @@ PrefabInstance:
       addedObject: {fileID: 7565405115268810139}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
+--- !u!33 &524456800409719246 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
+  m_PrefabInstance: {fileID: 3990853676876429696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2351945426579842308 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
+  m_PrefabInstance: {fileID: 3990853676876429696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3524318750763032171 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
