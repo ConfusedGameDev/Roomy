@@ -35,7 +35,7 @@ public class FurnitureData : MonoBehaviour
     public Vector3 objectDimensions;
     public Renderer rendererer;
 
-    public InputField inputFieldX,inputFieldY,inputFieldZ;
+    public TMPro.TMP_InputField inputFieldX,inputFieldY,inputFieldZ;
     FurnitureDataInputHandler inputHandler;
     private void Start()
     {
@@ -44,15 +44,19 @@ public class FurnitureData : MonoBehaviour
         CheckSize();
         if(inputFieldX)
         {
+            inputFieldX.text= objectDimensions.x.ToString("F2");
             inputFieldX.onValueChanged.AddListener(value => CalculateScale());
+            
         }
         if (inputFieldY)
         {
+            inputFieldY.text = objectDimensions.y.ToString("F2");
             inputFieldY.onValueChanged.AddListener(value => CalculateScale());
 
         }
         if (inputFieldZ)
         {
+            inputFieldZ.text = objectDimensions.z.ToString("F2");
             inputFieldZ.onValueChanged.AddListener(value => CalculateScale());
         }
         if (!rendererer)
