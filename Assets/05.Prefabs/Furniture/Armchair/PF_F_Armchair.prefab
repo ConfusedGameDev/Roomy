@@ -127,6 +127,11 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  objectDimensions: {x: 0, y: 0, z: 0}
+  rendererer: {fileID: 8425264529294470235}
+  inputFieldX: {fileID: 5901177151233481385}
+  inputFieldY: {fileID: 9209138939944240982}
+  inputFieldZ: {fileID: 404738944365144005}
 --- !u!114 &3797888130639434085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +149,7 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   previousHash:
     serializedVersion: 2
-    Hash: 929b8a4028ee106b96b72013416290c5
+    Hash: d5f8ede8e8412d684e2fc334347ddea4
 --- !u!114 &3044486257862640426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +176,7 @@ MonoBehaviour:
     - SurfaceNormal: {x: 0, y: 0, z: 1}
       SurfaceTextureDirection: {x: 0, y: 1, z: 0}
   meshDetailsList:
-  - Id: 67408
+  - Id: 78120
     Transform: {fileID: 7252943501708777268}
     MeshFilter: {fileID: 5983166497262622865}
     OriginalSharedMesh: {fileID: -1711551533593251201, guid: a0b7e8a4c8d5545e69bccd893614de46, type: 3}
@@ -179,7 +184,7 @@ MonoBehaviour:
     MeshRenderer: {fileID: 8425264529294470235}
     SlicedVertHash:
       serializedVersion: 2
-      Hash: 496feadbf702969a9905414647257cf6
+      Hash: 2e2db3f08cb59794405195956e4b8155
     SlicedUvHash:
       serializedVersion: 2
       Hash: 93c2fbfc7527e2cf5a927e6034776154
@@ -418,7 +423,19 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 682754329319933395, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380741982357664989, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2456886592326293809, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143085789032383660, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
@@ -623,6 +640,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+--- !u!114 &404738944365144005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7449279076310596078, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+  m_PrefabInstance: {fileID: 7132800446268743211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1662895225677345914 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8498017976709573201, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
@@ -633,6 +661,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6407387567883474631, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
   m_PrefabInstance: {fileID: 7132800446268743211}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5901177151233481385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3682252813241730178, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+  m_PrefabInstance: {fileID: 7132800446268743211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9209138939944240982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2103641876358797693, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+  m_PrefabInstance: {fileID: 7132800446268743211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7146395476578349279
 PrefabInstance:
   m_ObjectHideFlags: 0

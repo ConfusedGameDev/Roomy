@@ -127,6 +127,11 @@ MonoBehaviour:
   floorLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  objectDimensions: {x: 0, y: 0, z: 0}
+  rendererer: {fileID: 9113770677099505627}
+  inputFieldX: {fileID: 0}
+  inputFieldY: {fileID: 0}
+  inputFieldZ: {fileID: 0}
 --- !u!114 &9203917252336084185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +149,7 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   previousHash:
     serializedVersion: 2
-    Hash: c925d65b8cfa20392ead3adaac591051
+    Hash: a93a947579dae27b8f2352cd5c2ddbf2
 --- !u!114 &5724157794225659345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +176,7 @@ MonoBehaviour:
     - SurfaceNormal: {x: 0, y: 0, z: 1}
       SurfaceTextureDirection: {x: 0, y: 1, z: 0}
   meshDetailsList:
-  - Id: 68588
+  - Id: 78300
     Transform: {fileID: 7940324398148148404}
     MeshFilter: {fileID: 6457714833490170641}
     OriginalSharedMesh: {fileID: -4247549338207807723, guid: d39b41a845b31493d8376ab5f35d6d73, type: 3}
@@ -179,7 +184,7 @@ MonoBehaviour:
     MeshRenderer: {fileID: 9113770677099505627}
     SlicedVertHash:
       serializedVersion: 2
-      Hash: ff99804ffa613e4465164700278f668b
+      Hash: 773975a58f4c092a9286d0bdc008bf36
     SlicedUvHash:
       serializedVersion: 2
       Hash: 93c2fbfc7527e2cf5a927e6034776154
@@ -346,7 +351,19 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -17.3
       objectReference: {fileID: 0}
+    - target: {fileID: 682754329319933395, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380741982357664989, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2456886592326293809, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143085789032383660, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}

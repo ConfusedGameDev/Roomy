@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2615275903395343730}
   - component: {fileID: 3559416718852606329}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Value_Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 7449279076310596078}
   - component: {fileID: 7603247189607225272}
   m_Layer: 0
-  m_Name: InputField_Width
+  m_Name: InputField_Width_Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 2286854905241807867}
   - component: {fileID: 6938641881700229955}
   m_Layer: 0
-  m_Name: Dimension_BG
+  m_Name: Dimensions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 3980783816628538687}
   - component: {fileID: 7286450388507919044}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Value_X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 4258277170779317171}
   - component: {fileID: 2674627291539291728}
   m_Layer: 0
-  m_Name: Text Area
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 9090040549952817854}
   - component: {fileID: 6809940515777436113}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Value_Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 5452513320661729891}
   - component: {fileID: 2899339070016311900}
   m_Layer: 0
-  m_Name: Text Area
+  m_Name: Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1347,7 +1347,7 @@ GameObject:
   - component: {fileID: 3682252813241730178}
   - component: {fileID: 7446064269309059260}
   m_Layer: 0
-  m_Name: InputField_Length
+  m_Name: InputField_Length_X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1677,7 +1677,7 @@ GameObject:
   - component: {fileID: 2103641876358797693}
   - component: {fileID: 5996191908057972845}
   m_Layer: 0
-  m_Name: InputField_Height
+  m_Name: InputField_Height_Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1909,7 +1909,7 @@ GameObject:
   - component: {fileID: 750911515953623619}
   - component: {fileID: 6897011012164663893}
   m_Layer: 0
-  m_Name: Text Area
+  m_Name: Y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
