@@ -102,7 +102,7 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   previousHash:
     serializedVersion: 2
-    Hash: 705fa3808d67bc68d7b18256a1228b4a
+    Hash: b97fb0de1ce18c5e24cda7fecf5aeef2
 --- !u!114 &6422006044253038517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
     - SurfaceNormal: {x: 0, y: 0, z: 1}
       SurfaceTextureDirection: {x: 0, y: 1, z: 0}
   meshDetailsList:
-  - Id: 128436
+  - Id: 198230
     Transform: {fileID: 3524318750763032171}
     MeshFilter: {fileID: 524456800409719246}
     OriginalSharedMesh: {fileID: -6903756349217727178, guid: ee00fd9fbd88d429e9cdfd12787c9a7e, type: 3}
@@ -678,6 +678,10 @@ PrefabInstance:
     - target: {fileID: 7129380497442552003, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -17.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584656794893839034, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
+      propertyPath: m_text
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 8378864697678155903, guid: 763f21276625f4d7687c54f088ad33a8, type: 3}
       propertyPath: rect2props.w
